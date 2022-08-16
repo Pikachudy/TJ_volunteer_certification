@@ -5,7 +5,7 @@
     "appid": "wx98640280700efd75",
     "setting": {
         "urlCheck": true,
-        "es6": false,
+        "es6": true,
         "postcss": false,
         "minified": false,
         "coverView": true,
@@ -19,7 +19,7 @@
         "showShadowRootInWxmlPanel": true,
         "packNpmManually": false,
         "packNpmRelationList": [],
-        "minifyWXSS": true,
+        "minifyWXSS": false,
         "useStaticServer": true,
         "showES6CompileOption": false,
         "checkInvalidKey": true,
@@ -30,7 +30,7 @@
         },
         "disableUseStrict": false,
         "useCompilerPlugins": false,
-        "minifyWXML": true
+        "minifyWXML": false
     },
     "compileType": "miniprogram",
     "libVersion": "2.25.3",
