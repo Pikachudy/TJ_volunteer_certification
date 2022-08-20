@@ -22,7 +22,11 @@
         type="text"
         placeholder="请输入姓名"
         :value="name"
+        :adjustPosition="true"
+        cursorSpacing="1000"
       />
+      <!-- <input value="{{value}}" bindinput="bindinput" confirm-type="send" adjust-position="{{inputUp}}" bindfocus="inputFocus" bindblur="inputBlur"/> -->
+      <!-- <input type="text" placeholder="将会获取焦点" :focus="true" adjustPosition="true"/> -->
       <view class="mine_button">
         <AtButton type='primary'>提交</AtButton>
       </view>
@@ -37,7 +41,7 @@ import "taro-ui-vue3/dist/style/components/input.scss";
 import "taro-ui-vue3/dist/style/components/button.scss";
 export default {
   components: {
-    AtInput,
+    // AtInput,
     AtButton
   },
   data() {
@@ -47,5 +51,18 @@ export default {
       name:""
     };
   },
+  methods:{
+    inputFocus(e) {
+    console.log(e,'键盘弹起')
+    var inputHeight = 0
+    if (e.detail.height) {
+      inputHeight = e.detail.height
+    }
+  },
+  inputBlur() {
+    console.log('键盘收起')
+  },
+
+  }
 };
 </script>

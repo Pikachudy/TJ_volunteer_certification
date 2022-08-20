@@ -30,10 +30,11 @@
         },
         "disableUseStrict": false,
         "useCompilerPlugins": false,
-        "minifyWXML": false
+        "minifyWXML": false,
+        "ignoreUploadUnusedFiles": true
     },
     "compileType": "miniprogram",
-    "libVersion": "2.25.3",
+    "libVersion": "2.25.2",
     "srcMiniprogramRoot": "dist/",
     "packOptions": {
         "ignore": [],
