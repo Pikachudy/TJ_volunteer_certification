@@ -3,7 +3,7 @@
     <image
       class="image"
       mode="widthFix"
-      src="https://636c-cloud1-7gs40qcu242746b1-1311667620.tcb.qcloud.la/pic/outside-newest.png?sign=b2a909eb2460e12ac96d1fd0554b2d4e&t=1660973747"
+      src="https://636c-cloud1-7gs40qcu242746b1-1311667620.tcb.qcloud.la/pic/outside-newest.png?sign=3cc1b8d985873dcf5d2ab0705105718b&t=1661063901"
     ></image>
     <view class="input_card">
       <view class="title"> 信息填写 </view>
@@ -64,8 +64,9 @@ export default {
             });
           } else {
             Taro.showToast({
-              title: "未找到相关信息!",
-              icon: "error",
+              // title: "未找到相关信息,请提交志愿服务证明至tj_vs@163.com进行补录,邮件标题为'疫情服务证书补录-姓名'",
+              title: "未找到相关信息,补录方式请查看推送",
+              icon: "none",
               duration: 3000,
             });
           }
