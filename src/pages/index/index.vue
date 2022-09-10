@@ -8,7 +8,6 @@
     <view class="input_card">
       <view class="title"> 信息填写 </view>
       <AtInput
-        required
         :border="false"
         title="姓名"
         type="text"
@@ -16,11 +15,19 @@
         v-model:value="this.name"
         :adjustPosition="true"
       />
+      <AtInput
+        :border="false"
+        title="志愿者编号"
+        type="text"
+        placeholder="请输入您的志愿汇志愿者编号"
+        v-model:value="this.volunteer_no"
+        :adjustPosition="true"
+      />
       <view class="mine_button">
         <AtButton type="primary" @click="submit" :loading="this.button_loading"
           >提交</AtButton
         >
-      </view> 
+      </view>
     </view>
     <AtToast :isOpened="this.show_toast" :text="text" status="error"></AtToast>
   </view>
@@ -40,18 +47,30 @@ export default {
   data() {
     return {
       name: "",
+      volunteer_no: "",
       button_loading: false,
       show_toast: false,
     };
   },
   methods: {
     submit() {
+      if (this.name == "" || this.volunteer_no == "") {
+        Taro.showToast({
+          // title: "未找到相关信息,请提交志愿服务证明至tj_vs@163.com进行补录,邮件标题为'疫情服务证书补录-姓名'",
+          title: "请将信息填写完整",
+          icon: "error",
+          duration: 3000,
+        });
+        return;
+      }
+      else{
       this.button_loading = true;
       Taro.cloud
         .callFunction({
           name: "getStudentInfor",
           data: {
             name: this.name,
+            volunteer_no: this.volunteer_no,
           },
         })
         .then((res) => {
@@ -75,7 +94,16 @@ export default {
           this.button_loading = false;
           console.log(errMsg);
         });
-    }
+      }
+    },
   },
 };
 </script>
+
+<style scoped>
+.at-input__title {
+  font-size: 34px;
+  width: 34px;
+  color: #3c3c3c;
+}
+</style>

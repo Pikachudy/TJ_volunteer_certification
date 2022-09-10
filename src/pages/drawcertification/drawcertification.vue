@@ -44,7 +44,7 @@ export default {
       canvasHeight: 0,
       scale: 1,
       backImage:
-        "https://636c-cloud1-7gs40qcu242746b1-1311667620.tcb.qcloud.la/pic/inside-newest.png?sign=9347100c771ed0b8420ea1209025573d&t=1661091881", //背景图
+        "https://636c-cloud1-7gs40qcu242746b1-1311667620.tcb.qcloud.la/pic/inside-with1.png?sign=b912b89b37ef3cf89c05a0561a83a5c2&t=1661152224", //背景图
       tempFilePath: "",
       name: "用户昵称", //用户昵称
       year: "",
@@ -64,6 +64,7 @@ export default {
     //   // 要求小程序返回分享目标信息
     //   withShareTicket: true,
     // });
+    
   },
   async onShow() {
     const context = Taro.createCanvasContext("myCanvas", this.$scope);
