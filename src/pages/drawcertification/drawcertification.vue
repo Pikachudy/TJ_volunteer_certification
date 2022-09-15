@@ -74,7 +74,8 @@ export default {
 
     const ratio = this.pixelRatio;
     const name = this.name + " 同学";
-    const nowTime = this.year + " 年 " + this.month + " 月 " + this.day + " 日";
+    // const nowTime = this.year + " 年 " + this.month + " 月 " + this.day + " 日";
+    const nowTime = 2022 + " 年 " + 8 + " 月 " + 15 + " 日";
     let that = this;
     Taro.downloadFile({
       url: this.backImage,
