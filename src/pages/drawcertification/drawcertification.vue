@@ -44,7 +44,7 @@ export default {
       canvasHeight: 0,
       scale: 1,
       backImage:
-        "https://636c-cloud1-7gs40qcu242746b1-1311667620.tcb.qcloud.la/pic/inside-with1.png?sign=b912b89b37ef3cf89c05a0561a83a5c2&t=1661152224", //背景图
+        "https://636c-cloud1-7gs40qcu242746b1-1311667620.tcb.qcloud.la/pic/inside-1.png?sign=2c75e5c802b112cb9fdc16fdc4c693f7&t=1663313778", //背景图
       tempFilePath: "",
       name: "用户昵称", //用户昵称
       year: "",
@@ -75,7 +75,7 @@ export default {
     const ratio = this.pixelRatio;
     const name = this.name + " 同学";
     // const nowTime = this.year + " 年 " + this.month + " 月 " + this.day + " 日";
-    const nowTime = 2022 + " 年 " + 8 + " 月 " + 15 + " 日";
+    const nowTime = 2022 + " 年 " + 8 + " 月 ";
     let that = this;
     Taro.downloadFile({
       url: this.backImage,
@@ -103,7 +103,7 @@ export default {
               context.font = "17px SimHei";
               context.setFontSize(35* windowW / 750);
               // context.fillText(name, 0.40 * windowW *(windowW)/res.width, 0.225 * windowH );
-              context.fillText(name, 0.45 * windowW, 0.231 * res.height * (windowW / res.width));
+              context.fillText(name, 0.45 * windowW, 0.230 * res.height * (windowW / res.width));
 
               context.setTextAlign("center"); //
               // context.font = "17px bold Microsoft YaiHei";

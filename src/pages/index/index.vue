@@ -3,7 +3,7 @@
     <image
       class="image"
       mode="widthFix"
-      src="https://636c-cloud1-7gs40qcu242746b1-1311667620.tcb.qcloud.la/pic/outside-newest.png?sign=3cc1b8d985873dcf5d2ab0705105718b&t=1661063901"
+      src="https://636c-cloud1-7gs40qcu242746b1-1311667620.tcb.qcloud.la/pic/outside-1.png?sign=d7f851f1a81f6e5b28fb04752eb3c526&t=1663313820"
     ></image>
     <view class="input_card">
       <view class="title"> 信息填写 </view>
