@@ -1,4 +1,4 @@
 export default definePageConfig({
-  navigationBarBackgroundColor:'#2d82bf',
-  navigationBarTitleText: '信息填入',
+  navigationBarBackgroundColor:'#fcede8',
+  navigationBarTitleText: '证书选择',
 })

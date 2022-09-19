@@ -50,27 +50,7 @@
     /* margin-top: 25%; */
 }
 .mine_button{
-    margin-top: 5%;
     position: absolute;
     width: 90%;
     left:5%;
-}
-.demo-list-item{
-    display: flex;
-}
-.demo-list-item__value{
-    width: 100px;
-    text-align: right;
-    margin-top: 5%;
-    /* margin-left: 5%; */
-    font-size: large;
-    width: 70%;
-    text-align: center;
-}
-.demo-list-item__label{
-    margin-top: 5%;
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    font-weight: bold;
-    margin-left: 5%;
 }

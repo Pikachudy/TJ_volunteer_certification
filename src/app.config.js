@@ -3,7 +3,8 @@ export default defineAppConfig({
     'pages/index/index',
     'pages/backupquestionaire/backupquestionaire',
     'pages/certification/certification',
-    'pages/drawcertification/drawcertification'
+    'pages/drawcertification/drawcertification',
+    'pages/entr_epidemic_prevention/entr_epidemic_prevention',
   ],
   window: {
     backgroundTextStyle: 'light', 
