@@ -69,6 +69,7 @@ export default {
               icon: "none",
               duration: 3000,
             });
+            this.name="";
           }
         })
         .catch((errMsg) => {
