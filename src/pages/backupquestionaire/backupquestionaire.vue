@@ -25,6 +25,16 @@
         :adjustPosition="true"
         cursorSpacing="1000"
       />
+      <AtInput
+        required
+        :border="false"
+        title="志愿者编号"
+        type="text"
+        placeholder="请输入您的志愿者编号（志愿汇中可查）"
+        :value="volunteer_no"
+        :adjustPosition="true"
+        cursorSpacing="1000"
+      />
       <!-- <input value="{{value}}" bindinput="bindinput" confirm-type="send" adjust-position="{{inputUp}}" bindfocus="inputFocus" bindblur="inputBlur"/> -->
       <!-- <input type="text" placeholder="将会获取焦点" :focus="true" adjustPosition="true"/> -->
       <view class="mine_button">

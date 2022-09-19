@@ -44,7 +44,7 @@ export default {
       canvasHeight: 0,
       scale: 1,
       backImage:
-        "https://636c-cloud1-7gs40qcu242746b1-1311667620.tcb.qcloud.la/pic/inside-newest.png?sign=9347100c771ed0b8420ea1209025573d&t=1661091881", //背景图
+        "https://636c-cloud1-7gs40qcu242746b1-1311667620.tcb.qcloud.la/pic/inside_newest.png?sign=412608b46894e891fa4fb9528e34eeb1&t=1663512486", //背景图
       tempFilePath: "",
       name: "用户昵称", //用户昵称
       year: "",
@@ -64,6 +64,7 @@ export default {
     //   // 要求小程序返回分享目标信息
     //   withShareTicket: true,
     // });
+    
   },
   async onShow() {
     const context = Taro.createCanvasContext("myCanvas", this.$scope);
@@ -73,7 +74,8 @@ export default {
 
     const ratio = this.pixelRatio;
     const name = this.name + " 同学";
-    const nowTime = this.year + " 年 " + this.month + " 月 " + this.day + " 日";
+    // const nowTime = this.year + " 年 " + this.month + " 月 " + this.day + " 日";
+    const nowTime = 2022 + " 年 " + 8 + " 月 ";
     let that = this;
     Taro.downloadFile({
       url: this.backImage,
@@ -101,7 +103,7 @@ export default {
               context.font = "17px SimHei";
               context.setFontSize(35* windowW / 750);
               // context.fillText(name, 0.40 * windowW *(windowW)/res.width, 0.225 * windowH );
-              context.fillText(name, 0.45 * windowW, 0.231 * res.height * (windowW / res.width));
+              context.fillText(name, 0.45 * windowW, 0.230 * res.height * (windowW / res.width));
 
               context.setTextAlign("center"); //
               // context.font = "17px bold Microsoft YaiHei";
