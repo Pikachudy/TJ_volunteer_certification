@@ -36,9 +36,9 @@
 .input_card{
     position: absolute;
     width: 100%;
-    height: 200rpx;
+    height: 300rpx;
     background-color: white;
-    top:85%;
+    top:72%;
     border-top-left-radius: 30rpx;
     border-top-right-radius: 30rpx;
 }
@@ -53,24 +53,4 @@
     position: absolute;
     width: 90%;
     left:5%;
-    top: 70%;
-}
-.demo-list-item{
-    display: flex;
-}
-.demo-list-item__value{
-    width: 100px;
-    text-align: right;
-    margin-top: 5%;
-    /* margin-left: 5%; */
-    font-size: large;
-    width: 70%;
-    text-align: center;
-}
-.demo-list-item__label{
-    margin-top: 5%;
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    font-weight: bold;
-    margin-left: 5%;
 }

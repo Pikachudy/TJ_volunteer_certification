@@ -3,7 +3,7 @@
     <image
       class="image"
       mode="widthFix"
-      src="https://636c-cloud1-7gs40qcu242746b1-1311667620.tcb.qcloud.la/pic/home_background.jpg?sign=6c6764ab283824bfe753ff8ab55f9d79&t=1663576441"
+      src="https://636c-cloud1-7gs40qcu242746b1-1311667620.tcb.qcloud.la/pic/home_background.png?sign=cc7d0ba273b8f850757823b4bedfc654&t=1663681881"
     ></image>
     <view class="input_card">
       <view class="select_entry">
@@ -12,7 +12,6 @@
           :range="selector"
           :value="selectorValue"
           @change="handleChange"
-          @cancel="handleCancel"
         >
           <view class="demo-list-item">
             <view class="demo-list-item__label">证书选择</view>
@@ -25,11 +24,10 @@
 
       <view class="mine_button">
         <AtButton type="primary" @click="submit" :loading="this.button_loading"
-          >提交</AtButton
+          >确认</AtButton
         >
       </view>
     </view>
-    <AtToast :isOpened="this.show_toast" :text="text" status="error"></AtToast>
   </view>
 </template>
 
@@ -49,56 +47,34 @@ export default {
       volunteer_no: "",
       button_loading: false,
       show_toast: false,
-      selector: ["疫情防控志愿服务证书", "2022秋季小红帽志愿服务证明", "巴西", "日本"],
-      selectorValue: 0,
+      selector: ['2022春季疫情防控志愿服务', '2022秋季"小红帽"志愿服务'],
+      selectorValue: '0',
     };
   },
   methods: {
     handleChange(e) {
-      this.selectorValue = e.detail.value;
+      this.selectorValue = e.detail.value.toString();
     },
+
+
     submit() {
-      if (this.name == "" || this.volunteer_no == "") {
-        Taro.showToast({
-          // title: "未找到相关信息,请提交志愿服务证明至tj_vs@163.com进行补录,邮件标题为'疫情服务证书补录-姓名'",
-          title: "请将信息填写完整",
-          icon: "error",
-          duration: 3000,
-        });
-        return;
-      } else {
-        this.button_loading = true;
-        Taro.cloud
-          .callFunction({
-            name: "getStudentInfor",
-            data: {
-              name: this.name,
-              volunteer_no: this.volunteer_no,
-            },
-          })
-          .then((res) => {
-            this.button_loading = false;
-            if (res.result) {
-              Taro.navigateTo({
-                url:
-                  "../drawcertification/drawcertification?data=" +
-                  encodeURIComponent(JSON.stringify(this.name)),
-              });
-            } else {
-              Taro.showToast({
-                // title: "未找到相关信息,请提交志愿服务证明至tj_vs@163.com进行补录,邮件标题为'疫情服务证书补录-姓名'",
-                title: "未找到相关信息,补录方式请查看推送",
-                icon: "none",
-                duration: 3000,
-              });
-              this.name = "";
-            }
-          })
-          .catch((errMsg) => {
-            this.button_loading = false;
-            console.log(errMsg);
+      this.button_loading = true;
+      console.log(this.selectorValue);
+      switch (this.selectorValue){
+        case '0':
+          // 疫情防控志愿服务证书
+          Taro.navigateTo({
+            url: "../entr_epidemic_prevention/entr_epidemic_prevention",
           });
+          break;
+        case '1':
+          // 2022秋季小红帽志愿服务证明
+          Taro.navigateTo({
+            url: "../entr_homecomming_2022aut/entr_homecomming_2022aut",
+          });
+          break;
       }
+      this.button_loading = false;
     },
   },
 };

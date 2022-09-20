@@ -70,6 +70,7 @@ export default {
           name: "getStudentInfor",
           data: {
             name: this.name,
+            dbname:'epidemic22spring',
             volunteer_no: this.volunteer_no,
           },
         })
