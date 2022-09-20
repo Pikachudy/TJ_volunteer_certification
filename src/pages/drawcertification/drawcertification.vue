@@ -44,7 +44,7 @@ export default {
       canvasHeight: 0,
       scale: 1,
       backImage:
-        "https://636c-cloud1-7gs40qcu242746b1-1311667620.tcb.qcloud.la/pic/inside_newest.png?sign=412608b46894e891fa4fb9528e34eeb1&t=1663512486", //背景图
+        "https://636c-cloud1-7gs40qcu242746b1-1311667620.tcb.qcloud.la/pic/epidemic_2022spring_certificate.png?sign=c0ea7d9295d296e170afd80328f49ee1&t=1663689102", //背景图
       tempFilePath: "",
       name: "用户昵称", //用户昵称
       year: "",

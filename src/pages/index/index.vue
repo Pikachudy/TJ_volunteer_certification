@@ -15,7 +15,10 @@
         >
           <view class="demo-list-item">
             <view class="demo-list-item__label">证书选择</view>
-            <view class="demo-list-item__value">
+            <view class="demo-list-item__value__grey" v-if="this.selectorValue == '-1'">
+              点击此处选择活动
+            </view>
+            <view class="demo-list-item__value" v-else>
               {{ selector[selectorValue] }}
             </view>
           </view>
@@ -23,7 +26,7 @@
       </view>
 
       <view class="mine_button">
-        <AtButton type="primary" @click="submit" :loading="this.button_loading"
+        <AtButton type="primary" @click="submit" :loading="this.button_loading" style="background-color:#cc1318; border-color:  #cc1318;"
           >确认</AtButton
         >
       </view>
@@ -48,7 +51,7 @@ export default {
       button_loading: false,
       show_toast: false,
       selector: ['2022春季疫情防控志愿服务', '2022秋季"小红帽"志愿服务'],
-      selectorValue: '0',
+      selectorValue: '-1',
     };
   },
   methods: {
@@ -69,9 +72,15 @@ export default {
           break;
         case '1':
           // 2022秋季小红帽志愿服务证明
-          Taro.navigateTo({
-            url: "../entr_homecomming_2022aut/entr_homecomming_2022aut",
+          Taro.showToast({
+          // title: "未找到相关信息,请提交志愿服务证明至tj_vs@163.com进行补录,邮件标题为'疫情服务证书补录-姓名'",
+          title: "通道尚未开启，敬请期待",
+          icon: "error",
+          duration: 3000,
           });
+          // Taro.navigateTo({
+          //   url: "../entr_homecomming_2022aut/entr_homecomming_2022aut",
+          // });
           break;
       }
       this.button_loading = false;
