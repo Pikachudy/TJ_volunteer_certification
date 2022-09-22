@@ -72,15 +72,15 @@ export default {
           break;
         case '1':
           // 2022秋季小红帽志愿服务证明
-          Taro.showToast({
-          // title: "未找到相关信息,请提交志愿服务证明至tj_vs@163.com进行补录,邮件标题为'疫情服务证书补录-姓名'",
-          title: "通道尚未开启，敬请期待",
-          icon: "error",
-          duration: 3000,
-          });
-          // Taro.navigateTo({
-          //   url: "../entr_homecomming_2022aut/entr_homecomming_2022aut",
+          // Taro.showToast({
+          // // title: "未找到相关信息,请提交志愿服务证明至tj_vs@163.com进行补录,邮件标题为'疫情服务证书补录-姓名'",
+          // title: "通道尚未开启，敬请期待",
+          // icon: "error",
+          // duration: 3000,
           // });
+          Taro.navigateTo({
+            url: "../entr_homecomming_2022aut/entr_homecomming_2022aut",
+          });
           break;
       }
       this.button_loading = false;
