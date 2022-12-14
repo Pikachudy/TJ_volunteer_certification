@@ -27,6 +27,7 @@ exports.main = async (event, context) => {
         name:event.name,
         student_id:parseInt(event.student_id)
       }).get().then(res=>{
+        console.log(res.data)
         if(res.data.length > 0){
               return true
         }
