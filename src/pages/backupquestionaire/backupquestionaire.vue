@@ -3,7 +3,7 @@
     <image
       class="image"
       mode="widthFix"
-      src="https://636c-cloud1-7gs40qcu242746b1-1311667620.tcb.qcloud.la/pic/background.png?sign=c910aaf9fdf80d391c55d4b2f8de40d8&t=1660639375"
+      src="https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/epidemic_2022spring_background.png"
     ></image>
     <text class="slogan_title">
       {{ slogan_title }}

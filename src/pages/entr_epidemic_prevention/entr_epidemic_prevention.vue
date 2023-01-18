@@ -3,7 +3,7 @@
     <image
       class="image"
       mode="widthFix"
-      src="https://636c-cloud1-7gs40qcu242746b1-1311667620.tcb.qcloud.la/pic/epidemic_2022spring_background.png?sign=05c23189d2f89ff4bac487dcd24395ca&t=1663689033"
+      src="https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/epidemic_2022spring_background.png"
     ></image>
     <view class="input_card">
       <view class="title"> 信息填写 </view>
@@ -39,6 +39,7 @@ import { AtInput, AtButton } from "taro-ui-vue3";
 import "taro-ui-vue3/dist/style/components/input.scss";
 import "taro-ui-vue3/dist/style/components/button.scss";
 import Taro from "@tarojs/taro";
+import { axios } from 'taro-axios'
 export default {
   components: {
     AtInput,
@@ -65,18 +66,19 @@ export default {
       }
       else{
       this.button_loading = true;
-      Taro.cloud
-        .callFunction({
-          name: "getStudentInfor",
-          data: {
-            name: this.name,
-            dbname:'epidemic22spring',
-            volunteer_no: this.volunteer_no,
+      console.log(this.name);
+      console.log(this.volunteer_no)
+      axios
+        .get('http://1.117.102.181:8080/volunteer/epidemic',{
+          params:{
+            name:this.name,
+            volunteer_no:this.volunteer_no
           },
         })
-        .then((res) => {
+        .then(res => {
+          if(res.data.status)
           this.button_loading = false;
-          if (res.result) {
+          if (res.data.data.success) {
             Taro.navigateTo({
               url:
                 "../drawcertification/drawcertification?data=" +
@@ -96,6 +98,38 @@ export default {
           this.button_loading = false;
           console.log(errMsg);
         });
+      
+      // Taro.cloud
+      //   .callFunction({
+      //     name: "getStudentInfor",
+      //     data: {
+      //       name: this.name,
+      //       dbname:'epidemic22spring',
+      //       volunteer_no: this.volunteer_no,
+      //     },
+      //   })
+      //   .then((res) => {
+      //     this.button_loading = false;
+      //     if (res.result) {
+      //       Taro.navigateTo({
+      //         url:
+      //           "../drawcertification/drawcertification?data=" +
+      //           encodeURIComponent(JSON.stringify(this.name)),
+      //       });
+      //     } else {
+      //       Taro.showToast({
+      //         // title: "未找到相关信息,请提交志愿服务证明至tj_vs@163.com进行补录,邮件标题为'疫情服务证书补录-姓名'",
+      //         title: "未找到相关信息,补录方式请查看推送",
+      //         icon: "none",
+      //         duration: 3000,
+      //       });
+      //       this.name="";
+      //     }
+      //   })
+      //   .catch((errMsg) => {
+      //     this.button_loading = false;
+      //     console.log(errMsg);
+      //   });
       }
     },
   },

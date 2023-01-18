@@ -3,7 +3,7 @@
     <image
       class="image"
       mode="widthFix"
-      src="https://636c-cloud1-7gs40qcu242746b1-1311667620.tcb.qcloud.la/pic/home_background.png?sign=cc7d0ba273b8f850757823b4bedfc654&t=1663681881"
+      src="https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/overallcover_2022certification.PNG"
     ></image>
     <view class="input_card">
       <view class="select_entry">

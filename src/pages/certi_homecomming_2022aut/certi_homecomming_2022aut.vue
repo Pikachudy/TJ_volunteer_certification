@@ -46,7 +46,7 @@ export default {
       canvasHeight: 0,
       scale: 1,
       backImage:
-        "https://636c-cloud1-7gs40qcu242746b1-1311667620.tcb.qcloud.la/pic/red_hat_2022aut_certificate.png?sign=548266b303147853bb99209bc7b0e193&t=1663678366", //背景图
+        "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/redhat_2022fall_certification.PNG", //背景图
       tempFilePath: "",
       name: "用户昵称", //用户昵称
       button_loading: false,
