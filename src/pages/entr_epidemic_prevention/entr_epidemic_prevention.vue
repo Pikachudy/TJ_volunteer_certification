@@ -69,7 +69,8 @@ export default {
       console.log(this.name);
       console.log(this.volunteer_no)
       axios
-        .get('http://1.117.102.181:8080/volunteer/epidemic',{
+        // .get('http://1.117.102.181:8080/volunteer/epidemic',{
+        .get('https://xinyufang09.site/volunteer/epidemic',{
           params:{
             name:this.name,
             volunteer_no:this.volunteer_no
