@@ -67,8 +67,8 @@
         else{
         this.button_loading = true;
         axios
-        // .get('http://1.117.102.181:8080/volunteer/redhat2022fall',{
-        .get('https://xinyufang09.site/volunteer/redhat2022fall',{
+        // .get('http://1.117.102.181:8080/certification/redhat2022fall',{
+        .get('https://xinyufang09.site/certification/redhat2022fall',{
           params:{
             name: this.name,
             student_id: this.student_id
