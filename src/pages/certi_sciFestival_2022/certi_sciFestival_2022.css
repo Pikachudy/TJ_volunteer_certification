@@ -1,0 +1,76 @@
+.page_field{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: #f2f2f2;
+}
+page{
+  background-color: #f2f2f2;
+}
+.image{
+  width: 100%;
+}
+.name{
+width: 400px;
+height: 24px;  
+position: absolute;
+left: 16%;
+top: 24%;
+right: 0;
+bottom: 0;
+font-size:20rpx;
+color: white;
+font-weight: normal;
+font-family: cursive;
+}
+.month{
+width: 40%;
+height: 24px;  
+position: absolute;
+left: 80%;
+top: 69.3%;
+right: 0;
+bottom: 0;
+font-size:21rpx;
+color: white;
+font-weight: light;
+font-family: cursive;
+
+}
+.day{
+width: 40%;
+height: 24px;  
+position: absolute;
+left: 84.5%;
+top: 69.3%;
+right: 0;
+bottom: 0;
+font-size:21rpx;
+color: white;
+font-weight: light;
+font-family: cursive;
+}
+.opration_card{
+  position: absolute;
+  width: 100%;
+  height: 800rpx;
+  background-color: white;
+  top: 100%;
+  /* border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx; */
+}
+.opration_card .title{
+  font-size: 35rpx;
+  font-weight: bold;
+  margin-left: 5%;
+  margin-top: 5%;
+  /* margin-top: 25%; */
+}
+.mine_button{
+  position: absolute;
+  top:100%;
+  width: 90%;
+  left:5%;
+  /* margin-top: 3%; */
+
+}

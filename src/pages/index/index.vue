@@ -50,7 +50,7 @@ export default {
       volunteer_no: "",
       button_loading: false,
       show_toast: false,
-      selector: ['2022春季疫情防控志愿服务', '2022秋季"小红帽"志愿服务'],
+      selector: ['2022春季疫情防控志愿服务', '2022秋季"小红帽"志愿服务','2022年度学生科创盛典暨30U30卓越科创青年颁奖仪式'],
       selectorValue: '-1',
     };
   },
@@ -80,6 +80,18 @@ export default {
           // });
           Taro.navigateTo({
             url: "../entr_homecomming_2022aut/entr_homecomming_2022aut",
+          });
+          break;
+        case '2':
+          // 2022秋季小红帽志愿服务证明
+          // Taro.showToast({
+          // // title: "未找到相关信息,请提交志愿服务证明至tj_vs@163.com进行补录,邮件标题为'疫情服务证书补录-姓名'",
+          // title: "通道尚未开启，敬请期待",
+          // icon: "error",
+          // duration: 3000,
+          // });
+          Taro.navigateTo({
+            url: "../entr_sciFestival_2022/entr_sciFestival_2022",
           });
           break;
       }
