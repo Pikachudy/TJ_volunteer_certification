@@ -1,6 +1,6 @@
 <template>
   <view class="page_field" style="background-color: #f2f2f2;height: 86vh;">
-    <canvas canvas-id="myCanvas" style="width: 100%; height: 1200rpx" />
+    <canvas canvas-id="myCanvas" style="width: 100%; height: 1120rpx" />
     <!-- ?1500rpx" /> -->
     <!-- <div>1111</div> -->
     <!-- <div class="btn">
@@ -14,7 +14,7 @@
       </div>
     </div> -->
     <view class="mine_button">
-      <AtButton type="primary" @click="clickSaveImg" style="width: 90%"
+      <AtButton type="primary" @click="clickSaveImg" style="width: 90%; margin-top: 5%;"
         >保存至相册</AtButton
       >
     </view>

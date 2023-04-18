@@ -85,7 +85,7 @@
           } else {
             Taro.showToast({
               // title: "未找到相关信息,请提交志愿服务证明至tj_vs@163.com进行补录,邮件标题为'疫情服务证书补录-姓名'",
-              title: "未找到相关信息,补录方式请查看推送",
+              title: "未找到相关信息",
               icon: "none",
               duration: 3000,
             });
