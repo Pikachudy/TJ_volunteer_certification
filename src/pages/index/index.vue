@@ -50,7 +50,7 @@ export default {
       volunteer_no: "",
       button_loading: false,
       show_toast: false,
-      selector: ['2022年度学生科创盛典暨30U30卓越科创青年颁奖仪式', '2022秋季"小红帽"志愿服务', '2022春季疫情防控志愿服务'],
+      selector: ['第十六届“学术先锋”评选','第二十二届“拍同济”摄影大赛','2022年度学生科创盛典暨30U30卓越科创青年颁奖仪式', '2022秋季"小红帽"志愿服务', '2022春季疫情防控志愿服务'],
       selectorValue: '-1',
     };
   },
@@ -64,13 +64,13 @@ export default {
       this.button_loading = true;
       console.log(this.selectorValue);
       switch (this.selectorValue){
-        case '2':
+        case '4':
           // 疫情防控志愿服务证书
           Taro.navigateTo({
             url: "../entr_epidemic_prevention/entr_epidemic_prevention",
           });
           break;
-        case '1':
+        case '3':
           // 2022秋季小红帽志愿服务证明
           // Taro.showToast({
           // // title: "未找到相关信息,请提交志愿服务证明至tj_vs@163.com进行补录,邮件标题为'疫情服务证书补录-姓名'",
@@ -83,9 +83,12 @@ export default {
           });
           break;
         case '0':
-          // 2022年度学生科创盛典暨30U30卓越科创青年颁奖仪式
+        case '1':
+        case '2':
+          // 研会各项证书
+          console.log(this.selector[this.selectorValue]);
           Taro.navigateTo({
-            url: "../entr_sciFestival_2022/entr_sciFestival_2022",
+            url: "../entr_sciFestival_2022/entr_sciFestival_2022?activity_name=" + encodeURIComponent(JSON.stringify(this.selector[this.selectorValue])),
           });
           break;
       }

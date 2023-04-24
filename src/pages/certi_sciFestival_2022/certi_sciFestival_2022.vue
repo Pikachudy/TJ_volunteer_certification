@@ -1,5 +1,5 @@
 <template>
-  <view class="page_field" style="background-color: #f2f2f2;height: 86vh;">
+  <view class="page_field" style="background-color: #f2f2f2; height: 86vh">
     <canvas canvas-id="myCanvas" style="width: 100%; height: 1120rpx" />
     <!-- ?1500rpx" /> -->
     <!-- <div>1111</div> -->
@@ -14,7 +14,18 @@
       </div>
     </div> -->
     <view class="mine_button">
-      <AtButton type="primary" @click="clickSaveImg" style="width: 90%; margin-top: 5%;"
+      <view v-if="this.certification_num != this.page_no + 1">
+        <AtButton
+          type="primary"
+          @click="goNextCert"
+          style="width: 90%; margin-top: 5%"
+          >下一张证书</AtButton
+        >
+      </view>
+      <AtButton
+        type="primary"
+        @click="clickSaveImg"
+        style="width: 90%; margin-top: 5%"
         >保存至相册</AtButton
       >
     </view>
@@ -46,20 +57,38 @@ export default {
       canvasWidth: 0,
       canvasHeight: 0,
       scale: 1,
-      backImage:
-        "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/sci_tech_festival_2022.jpg", //背景图
+      backImage: "",
+      //   "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/sci_tech_festival_2022.jpg", //背景图
       tempFilePath: "",
       name: "用户昵称", //用户昵称
       button_loading: false,
       group_name: "",
-      certification_id: ""
+      page_no: 0,
+      activity_name: "",
+      certification_info: [],
+      certification_num: -1,
+      certification_dict: {
+        "第十六届“学术先锋”评选":
+          "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/16th_academic_pioneer_volunteer_cert.jpg",
+        "第二十二届“拍同济”摄影大赛":
+          "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/22th_takepicture_volunteer_cert.jpg",
+        "2022年度学生科创盛典暨30U30卓越科创青年颁奖仪式":
+          "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/sci_tech_festival_2022.jpg",
+      },
     };
   },
   onLoad(query) {
-    this.name = JSON.parse(decodeURIComponent(query.name));
-    this.student_id = JSON.parse(decodeURIComponent(query.student_id));
-    this.group_name = JSON.parse(decodeURIComponent(query.group_name));
-    this.certification_id = JSON.parse(decodeURIComponent(query.certification_id));
+    this.certification_info = JSON.parse(
+      decodeURIComponent(query.volunteer_info)
+    );
+    this.certification_num = this.certification_info.length;
+    this.activity_name = JSON.parse(decodeURIComponent(query.activity_name));
+    this.backImage = this.certification_dict[this.activity_name];
+    this.page_no = JSON.parse(decodeURIComponent(query.page_no));
+    this.group_name = this.certification_info[this.page_no].workGroup;
+    this.name = this.certification_info[this.page_no].studentName;
+    this.certification_id = this.certification_info[this.page_no].volunteerId;
+    // console.log(this.page_no);
   },
   async onShow() {
     const context = Taro.createCanvasContext("myCanvas", this.$scope);
@@ -71,6 +100,7 @@ export default {
     const student_id = this.student_id;
     const group_name = this.group_name;
     const certification_id = this.certification_id;
+    const activity_name = this.activity_name;
     let that = this;
     Taro.downloadFile({
       url: this.backImage,
@@ -88,7 +118,7 @@ export default {
                 windowW,
                 (windowW / res.width) * res.height
               ); //图片背景图
-              context.setTextAlign("center"); //
+              context.setTextAlign("center");
               // context.font = "17px bold Microsoft YaiHei";
               context.font = "17px SimSun";
               context.setFontSize((33 * windowW) / 750);
@@ -106,11 +136,34 @@ export default {
               context.setFontSize((26 * windowW) / 750);
               //context.setFillStyle("#928770");
               // context.fillText(name, 0.40 * windowW *(windowW)/res.width, 0.225 * windowH );
-              context.fillText(
-                group_name,
-                0.715 * windowW,
-                0.4585 * res.height * (windowW / res.width)
-              );
+              if (
+                activity_name ==
+                "2022年度学生科创盛典暨30U30卓越科创青年颁奖仪式"
+              ) {
+                context.fillText(
+                  group_name,
+                  0.715 * windowW,
+                  0.4585 * res.height * (windowW / res.width)
+                );
+              } else if (activity_name == "第二十二届“拍同济”摄影大赛") {
+                context.fillText(
+                  group_name,
+                  0.35 * windowW, //0.35正中间
+                  0.4585 * res.height * (windowW / res.width)
+                );
+              } else if (activity_name == "第十六届“学术先锋”评选") {
+                context.fillText(
+                  group_name,
+                  0.28 * windowW,
+                  0.4585 * res.height * (windowW / res.width)
+                );
+              } else {
+                context.fillText(
+                  group_name,
+                  0.715 * windowW,
+                  0.4585 * res.height * (windowW / res.width)
+                );
+              }
 
               context.setTextAlign("center"); //
               // context.font = "17px bold Microsoft YaiHei";
@@ -119,7 +172,7 @@ export default {
               //context.setFillStyle("#928770");
               // context.fillText(name, 0.40 * windowW *(windowW)/res.width, 0.225 * windowH );
               context.fillText(
-                "证书编号："+ certification_id,
+                "证书编号：" + certification_id,
                 0.75 * windowW,
                 0.05 * res.height * (windowW / res.width)
               );
@@ -131,15 +184,13 @@ export default {
                     canvasId: "myCanvas",
                     success: function (res) {
                       console.log(res);
-                      that.tempFilePath = res.tempFilePath; //值存储 采用sessionstorage?试试
+                      that.tempFilePath = res.tempFilePath;
                       Taro.setStorageSync("OutputImgPath", res.tempFilePath);
                     },
                   });
                 },
                 that
               );
-              // this.tmpFilePath = that.tmpFilePath//压根不执行这些语句
-              // console.log(this.tmpFilePath)
             },
           });
         }
@@ -203,6 +254,17 @@ export default {
             });
           }
         },
+      });
+    },
+    goNextCert() {
+      Taro.navigateTo({
+        url:
+          "../certi_sciFestival_2022/certi_sciFestival_2022?volunteer_info=" +
+          encodeURIComponent(JSON.stringify(this.certification_info)) +
+          "&activity_name=" +
+          encodeURIComponent(JSON.stringify(this.activity_name)) +
+          "&page_no=" +
+          encodeURIComponent(JSON.stringify(this.page_no+1)),
       });
     },
     // shareFriend() {

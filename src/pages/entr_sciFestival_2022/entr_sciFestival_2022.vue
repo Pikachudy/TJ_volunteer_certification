@@ -6,7 +6,7 @@
         src="https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/cover.jpg"
       ></image>
       <view class="input_card">
-        <view class="title"> 信息填写 </view>
+        <view class="title"> {{this.activity_name}} 志愿者信息填写 </view>
         <AtInput
           :border="false"
           title="姓名"
@@ -51,7 +51,11 @@
         student_id: "",
         button_loading: false,
         show_toast: false,
+        activity_name: "",
       };
+    },
+    onLoad(query){
+      this.activity_name = JSON.parse(decodeURIComponent(query.activity_name));
     },
     methods: {
       submit() {
@@ -66,31 +70,35 @@
         }
         else{
         this.button_loading = true;
+        console.log(this.name)
+        console.log(this.student_id)
+        console.log(this.activity_name)
         axios
-        // .get('http://1.117.102.181:8080/certification/redhat2022fall',{
-        .get('https://xinyufang09.site/certification/sciFestival2022fall',{
+        .get('https://xinyufang09.site/certification/GSU2023spring',{
           params:{
             name: this.name,
-            student_id: this.student_id
+            student_id: this.student_id,
+            activity_name: this.activity_name
           },
         })
         .then(res => {
           this.button_loading = false;
+          console.log(res.data.data.info);
           if (res.data.data.success) {
             Taro.navigateTo({
               url:
-                "../certi_sciFestival_2022/certi_sciFestival_2022?name=" +
-                encodeURIComponent(JSON.stringify(this.name))+"&student_id="+encodeURIComponent(JSON.stringify(this.student_id))+"&group_name="+encodeURIComponent(JSON.stringify(res.data.data.group))+"&certification_id="+encodeURIComponent(JSON.stringify(res.data.data.volunteerID)),
+                "../certi_sciFestival_2022/certi_sciFestival_2022?volunteer_info=" +
+                encodeURIComponent(JSON.stringify(res.data.data.info)) + "&activity_name=" + encodeURIComponent(JSON.stringify(this.activity_name)) +"&page_no=" + encodeURIComponent(JSON.stringify(0)),
+                // encodeURIComponent(JSON.stringify(this.name))+"&student_id="+encodeURIComponent(JSON.stringify(this.student_id))+"&group_name="+encodeURIComponent(JSON.stringify(res.data.data.group))+"&certification_id="+encodeURIComponent(JSON.stringify(res.data.data.volunteerID)),
             });
           } else {
             Taro.showToast({
-              // title: "未找到相关信息,请提交志愿服务证明至tj_vs@163.com进行补录,邮件标题为'疫情服务证书补录-姓名'",
               title: "未找到相关信息",
               icon: "none",
               duration: 3000,
             });
-            this.name="";
-            this.student_id="";
+            // this.name="";
+            // this.student_id="";
           }
         })
         .catch((errMsg) => {
