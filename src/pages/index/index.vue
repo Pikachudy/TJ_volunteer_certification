@@ -50,7 +50,7 @@ export default {
       volunteer_no: "",
       button_loading: false,
       show_toast: false,
-      selector: ['第十六届“学术先锋”评选','第二十二届“拍同济”摄影大赛','2022年度学生科创盛典暨30U30卓越科创青年颁奖仪式', '2022秋季"小红帽"志愿服务', '2022春季疫情防控志愿服务'],
+      selector: ['“我是领学人”学习接力活动','“人民建议在校园·雏凤清声”同济大学第二届提案大赛','“春风十里 芳华如你”国际妇女节主题活动','第十六届“学术先锋”评选','第二十二届“拍同济”摄影大赛','2022年度学生科创盛典暨30U30卓越科创青年颁奖仪式', '2022秋季"小红帽"志愿服务', '2022春季疫情防控志愿服务'],
       selectorValue: '-1',
     };
   },
@@ -64,13 +64,13 @@ export default {
       this.button_loading = true;
       console.log(this.selectorValue);
       switch (this.selectorValue){
-        case '4':
+        case '7':
           // 疫情防控志愿服务证书
           Taro.navigateTo({
             url: "../entr_epidemic_prevention/entr_epidemic_prevention",
           });
           break;
-        case '3':
+        case '6':
           // 2022秋季小红帽志愿服务证明
           // Taro.showToast({
           // // title: "未找到相关信息,请提交志愿服务证明至tj_vs@163.com进行补录,邮件标题为'疫情服务证书补录-姓名'",
@@ -82,9 +82,13 @@ export default {
             url: "../entr_homecomming_2022aut/entr_homecomming_2022aut",
           });
           break;
-        case '0':
-        case '1':
-        case '2':
+        case '0'://领学人
+        case 0://领学人
+        case '1'://提案大赛
+        case '2'://妇女节
+        case '3':
+        case '4':
+        case '5':
           // 研会各项证书
           console.log(this.selector[this.selectorValue]);
           Taro.navigateTo({
