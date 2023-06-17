@@ -74,6 +74,14 @@ export default {
           "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/22th_takepicture_volunteer_cert.jpg",
         "2022年度学生科创盛典暨30U30卓越科创青年颁奖仪式":
           "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/sci_tech_festival_2022.jpg",
+        "第十三届“同声唱响”研究生歌手大赛":
+          "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/%E5%90%8C%E5%A3%B0%E5%94%B1%E5%93%8D.jpg",
+        "“我是领学人”学习接力活动":
+          "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/%E9%A2%86%E5%AD%A6%E4%BA%BA%EF%BC%88%E5%AE%BD%E5%AD%97%E9%97%B4%E8%B7%9D%EF%BC%89.jpg",
+        "“人民建议在校园·雏凤清声”同济大学第二届提案大赛":
+          "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/%E6%8F%90%E6%A1%88%E5%A4%A7%E8%B5%9B.jpg",
+        "“春风十里 芳华如你”国际妇女节主题活动":
+          "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/%E5%A6%87%E5%A5%B3%E6%B4%BB%E5%8A%A8.jpg",
       },
     };
   },
@@ -155,6 +163,30 @@ export default {
                 context.fillText(
                   group_name,
                   0.28 * windowW,
+                  0.4585 * res.height * (windowW / res.width)
+                );
+              } else if (activity_name == "第十三届“同声唱响”研究生歌手大赛") {
+                context.fillText(
+                  group_name,
+                  0.34 * windowW,
+                  0.4585 * res.height * (windowW / res.width)
+                );
+              } else if (activity_name == "“我是领学人”学习接力活动") {
+                context.fillText(
+                  group_name,
+                  0.18 * windowW,
+                  0.4585 * res.height * (windowW / res.width)
+                );
+              } else if (activity_name == "“人民建议在校园·雏凤清声”同济大学第二届提案大赛") {
+                context.fillText(
+                  group_name,
+                  0.63 * windowW,
+                  0.4585 * res.height * (windowW / res.width)
+                );
+              } else if (activity_name == "“春风十里 芳华如你”国际妇女节主题活动") {
+                context.fillText(
+                  group_name,
+                  0.35 * windowW,
                   0.4585 * res.height * (windowW / res.width)
                 );
               } else {

@@ -50,7 +50,7 @@ export default {
       volunteer_no: "",
       button_loading: false,
       show_toast: false,
-      selector: ['“我是领学人”学习接力活动','“人民建议在校园·雏凤清声”同济大学第二届提案大赛','“春风十里 芳华如你”国际妇女节主题活动','第十六届“学术先锋”评选','第二十二届“拍同济”摄影大赛','2022年度学生科创盛典暨30U30卓越科创青年颁奖仪式', '2022秋季"小红帽"志愿服务', '2022春季疫情防控志愿服务'],
+      selector: ['第十三届“同声唱响”研究生歌手大赛','“我是领学人”学习接力活动','“人民建议在校园·雏凤清声”同济大学第二届提案大赛','“春风十里 芳华如你”国际妇女节主题活动','第十六届“学术先锋”评选','第二十二届“拍同济”摄影大赛','2022年度学生科创盛典暨30U30卓越科创青年颁奖仪式', '2022秋季"小红帽"志愿服务', '2022春季疫情防控志愿服务'],
       selectorValue: '-1',
     };
   },
@@ -82,13 +82,14 @@ export default {
             url: "../entr_homecomming_2022aut/entr_homecomming_2022aut",
           });
           break;
-        case '0'://领学人
-        case 0://领学人
-        case '1'://提案大赛
-        case '2'://妇女节
+        case '0':
+        case 0:
+        case '1':
+        case '2':
         case '3':
         case '4':
         case '5':
+        case '6':
           // 研会各项证书
           console.log(this.selector[this.selectorValue]);
           Taro.navigateTo({
