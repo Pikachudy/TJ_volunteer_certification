@@ -82,6 +82,8 @@ export default {
           "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/%E6%8F%90%E6%A1%88%E5%A4%A7%E8%B5%9B.jpg",
         "“春风十里 芳华如你”国际妇女节主题活动":
           "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/%E5%A6%87%E5%A5%B3%E6%B4%BB%E5%8A%A8.jpg",
+        "第十届勇往「职」前·模拟求职大赛":
+          "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/%E5%8B%87%E5%BE%80%E8%81%8C%E5%89%8D.jpg",
       },
     };
   },
@@ -187,6 +189,12 @@ export default {
                 context.fillText(
                   group_name,
                   0.35 * windowW,
+                  0.4585 * res.height * (windowW / res.width)
+                );
+              } else if (activity_name == "第十届勇往「职」前·模拟求职大赛") {
+                context.fillText(
+                  group_name,
+                  0.3 * windowW,
                   0.4585 * res.height * (windowW / res.width)
                 );
               } else {
