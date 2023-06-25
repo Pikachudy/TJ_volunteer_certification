@@ -64,13 +64,13 @@ export default {
       this.button_loading = true;
       console.log(this.selectorValue);
       switch (this.selectorValue){
-        case '8':
+        case '9':
           // 疫情防控志愿服务证书
           Taro.navigateTo({
             url: "../entr_epidemic_prevention/entr_epidemic_prevention",
           });
           break;
-        case '9':
+        case '8':
           // 2022秋季小红帽志愿服务证明
           // Taro.showToast({
           // // title: "未找到相关信息,请提交志愿服务证明至tj_vs@163.com进行补录,邮件标题为'疫情服务证书补录-姓名'",
