@@ -9,6 +9,8 @@ export default defineAppConfig({
     'pages/certi_homecomming_2022aut/certi_homecomming_2022aut',
     'pages/entr_sciFestival_2022/entr_sciFestival_2022',
     'pages/certi_sciFestival_2022/certi_sciFestival_2022',
+    'pages/entr_TJVS_2023/entr_TJVS_2023',
+    'pages/certi_TJVS_2023/certi_TJVS_2023'
   ],
   window: {
     backgroundTextStyle: 'light', 

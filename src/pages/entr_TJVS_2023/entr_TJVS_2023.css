@@ -1,0 +1,56 @@
+/* .title{
+    background-color: aqua;
+
+} */
+.page_field{
+    width: 100%;
+    position: relative;
+}
+.image{
+    width: 100%;
+}
+/* .slogan_title{
+  width: 400px;
+  height: 24px;  
+  position: absolute;
+  left: 5%;
+  top: 20%;
+  right: 0;
+  bottom: 0;
+  font-size:30rpx;
+  color: white;
+  font-weight: bold;
+}
+.slogan_text{
+  width: 40%;
+  height: 24px;  
+  position: absolute;
+  left: 7%;
+  top: 40%;
+  right: 0;
+  bottom: 0;
+  font-size:25rpx;
+  color: #e2ffff;
+  font-weight: light;
+} */
+.input_card{
+    position: absolute;
+    width: 100%;
+    height: 300rpx;
+    background-color: white;
+    top:100%;
+    border-top-left-radius: 30rpx;
+    border-top-right-radius: 30rpx;
+}
+.input_card .title{
+    font-size: 35rpx;
+    font-weight: bold;
+    margin-left: 5%;
+    margin-top: 5%;
+    /* margin-top: 25%; */
+}
+.mine_button{
+    position: absolute;
+    width: 90%;
+    left:5%;
+}
