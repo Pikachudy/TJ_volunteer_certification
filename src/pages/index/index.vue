@@ -91,6 +91,7 @@ export default {
           Taro.navigateTo({
             url: "../entr_TJVS_2023/entr_TJVS_2023?activity_name=" + encodeURIComponent(JSON.stringify(this.selector[this.selectorValue])),
           });
+          break;
         case '4':
         case '5':
         case '6':
