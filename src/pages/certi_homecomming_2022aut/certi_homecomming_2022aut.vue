@@ -46,7 +46,7 @@ export default {
       canvasHeight: 0,
       scale: 1,
       backImage:
-        "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/redhat_2022fall_certification.PNG", //背景图
+        "https://cos20231211-1322921586.cos.ap-shanghai.myqcloud.com/redhat_2022fall_certification.PNG", //背景图
       tempFilePath: "",
       name: "用户昵称", //用户昵称
       button_loading: false,

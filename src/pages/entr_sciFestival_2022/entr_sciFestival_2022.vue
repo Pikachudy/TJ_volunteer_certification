@@ -3,7 +3,7 @@
       <image
         class="image"
         mode="widthFix"
-        src="https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/cover.jpg"
+        src="https://cos20231211-1322921586.cos.ap-shanghai.myqcloud.com/volunteer_certification/cover.jpg"
       ></image>
       <view class="input_card">
         <view class="title"> {{this.activity_name}} 志愿者信息填写 </view>

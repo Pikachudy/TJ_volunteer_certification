@@ -58,7 +58,7 @@
         canvasHeight: 0,
         scale: 1,
         backImage: "",
-        //   "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/sci_tech_festival_2022.jpg", //背景图
+        //   "https://cos20231211-1322921586.cos.ap-shanghai.myqcloud.com/volunteer_certification/sci_tech_festival_2022.jpg", //背景图
         tempFilePath: "",
         name: "用户昵称", //用户昵称
         button_loading: false,
@@ -69,13 +69,13 @@
         certification_num: -1,
         certification_dict: {
           "同济大学2023年强基计划面试":
-            "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/TJ-VS/2023%E5%BC%BA%E5%9F%BA%E8%AE%A1%E5%88%92%E5%BF%97%E6%84%BF%E8%80%85.jpg",
+            "https://cos20231211-1322921586.cos.ap-shanghai.myqcloud.com/volunteer_certification/TJ-VS/2023%E5%BC%BA%E5%9F%BA%E8%AE%A1%E5%88%92%E5%BF%97%E6%84%BF%E8%80%85.jpg",
           "同济大学2023校园开放日":
-            "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/TJ-VS/2023%E6%A0%A1%E5%9B%AD%E5%BC%80%E6%94%BE%E6%97%A5%E5%BF%97%E6%84%BF%E8%80%85.jpg",
+            "https://cos20231211-1322921586.cos.ap-shanghai.myqcloud.com/volunteer_certification/TJ-VS/2023%E6%A0%A1%E5%9B%AD%E5%BC%80%E6%94%BE%E6%97%A5%E5%BF%97%E6%84%BF%E8%80%85.jpg",
           "同济大学2023届毕业典礼":
-            "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/TJ-VS/2023%E6%AF%95%E4%B8%9A%E5%85%B8%E7%A4%BC%E5%BF%97%E6%84%BF%E6%9C%8D%E5%8A%A1.jpg",
+            "https://cos20231211-1322921586.cos.ap-shanghai.myqcloud.com/volunteer_certification/TJ-VS/2023%E6%AF%95%E4%B8%9A%E5%85%B8%E7%A4%BC%E5%BF%97%E6%84%BF%E6%9C%8D%E5%8A%A1.jpg",
           "同济大学2023年综合评价面试":
-            "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/TJ-VS/2023%E7%BB%BC%E5%90%88%E8%AF%84%E4%BB%B7%E6%8B%9B%E7%94%9F%E5%BF%97%E6%84%BF%E8%80%85.jpg"
+            "https://cos20231211-1322921586.cos.ap-shanghai.myqcloud.com/volunteer_certification/TJ-VS/2023%E7%BB%BC%E5%90%88%E8%AF%84%E4%BB%B7%E6%8B%9B%E7%94%9F%E5%BF%97%E6%84%BF%E8%80%85.jpg"
         },
       };
     },

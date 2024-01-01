@@ -44,7 +44,7 @@ export default {
       canvasHeight: 0,
       scale: 1,
       backImage:
-        "https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/epidemic_2022spring_certificate.png", //背景图
+        "https://cos20231211-1322921586.cos.ap-shanghai.myqcloud.com/epidemic_2022spring_certificate.png", //背景图
       tempFilePath: "",
       name: "用户昵称", //用户昵称
       year: "",

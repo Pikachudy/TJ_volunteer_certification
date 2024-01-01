@@ -3,7 +3,7 @@
     <image
       class="image"
       mode="widthFix"
-      src="https://commleague2023-1311667620.cos.ap-shanghai.myqcloud.com/volunteer_certification/TJ-VS/cover1.png"
+      src="https://cos20231211-1322921586.cos.ap-shanghai.myqcloud.com/volunteer_certification/TJ-VS/cover1.png"
     ></image>
     <view class="input_card">
       <view class="select_entry">
