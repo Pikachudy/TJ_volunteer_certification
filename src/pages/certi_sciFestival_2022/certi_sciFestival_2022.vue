@@ -84,7 +84,11 @@ export default {
           "https://cos20231211-1322921586.cos.ap-shanghai.myqcloud.com/volunteer_certification/%E5%A6%87%E5%A5%B3%E6%B4%BB%E5%8A%A8.jpg",
         "第十届勇往「职」前·模拟求职大赛":
           "https://cos20231211-1322921586.cos.ap-shanghai.myqcloud.com/volunteer_certification/%E5%8B%87%E5%BE%80%E8%81%8C%E5%89%8D.jpg",
-      },
+        "第三十九届“枫林节”开幕式暨2023级研究生迎新晚会":
+          "https://cos20231211-1322921586.cos.ap-shanghai.myqcloud.com/volunteer_certification/%E5%BF%97%E6%84%BF%E8%AF%81%E6%98%8E-%E6%9E%AB%E6%9E%97%E8%8A%82.png",
+        "第二十八次研究生代表大会":
+          "https://cos20231211-1322921586.cos.ap-shanghai.myqcloud.com/volunteer_certification/%E5%BF%97%E6%84%BF%E8%AF%81%E6%98%8E-%E7%A0%94%E4%BB%A3%E4%BC%9A.png"
+        },
     };
   },
   onLoad(query) {
@@ -134,11 +138,20 @@ export default {
               context.setFontSize((33 * windowW) / 750);
               //context.setFillStyle("#928770");
               // context.fillText(name, 0.40 * windowW *(windowW)/res.width, 0.225 * windowH );
-              context.fillText(
-                name,
-                0.175 * windowW,
-                0.324 * res.height * (windowW / res.width)
-              );
+              if (activity_name == "第三十九届“枫林节”开幕式暨2023级研究生迎新晚会" || activity_name == "第二十八次研究生代表大会") {
+                context.fillText(
+                    name,
+                    0.31 * windowW,
+                    0.375 * res.height * (windowW / res.width)
+                  );
+              } else {
+                  context.fillText(
+                    name,
+                    0.175 * windowW,
+                    0.324 * res.height * (windowW / res.width)
+                  );
+              }
+              
 
               context.setTextAlign("center"); //
               // context.font = "17px bold Microsoft YaiHei";
@@ -196,6 +209,18 @@ export default {
                   group_name,
                   0.3 * windowW,
                   0.4585 * res.height * (windowW / res.width)
+                );
+              } else if (activity_name == "第三十九届“枫林节”开幕式暨2023级研究生迎新晚会") {
+                context.fillText(
+                  group_name,
+                  0.5 * windowW,
+                  0.464 * res.height * (windowW / res.width)
+                );
+              } else if (activity_name == "第二十八次研究生代表大会") {
+                context.fillText(
+                  group_name,
+                  0.35 * windowW,
+                  0.46 * res.height * (windowW / res.width)
                 );
               } else {
                 context.fillText(
